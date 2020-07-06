@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,38 @@
   <title>Sign up | Robusta</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <form action="https://private-b2e6827-robustatask.apiary-mock.com/auth/register" method="post">
-      <div class="form-group">
-        <span>Full Name</span>
-        <input type="text" id="username" />
-      </div>
-      <div class="form-group">
-        <span>Email</span>
-        <input type="text" id="username" />
-      </div>
-      <div class="form-group">
-        <span>Username</span>
-        <input type="text" id="username" />
-      </div>
-      <div class="form-group">
-        <span>Password</span>
-        <input type="password" id="password" />
-      </div>
-      <input type="submit" value="submit" />
-    </form>
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form id="signUpForm">
+        <h1>Create Account</h1>
+        <div class="form-group">
+          <label for="full_name">Full Name *</label>
+          <input type="text" id="fullname" placeholder="John Doe" />
+          <p class="errorMsg">You must fill this field !</p>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="user@example.com" />
+          <p class="errorMsg">Your email must be valid !</p>
+        </div>
+        <div class="form-group">
+          <label for="user_name">User Name *</label>
+          <input type="text" id="username" placeholder="JohnnyDoe" />
+          <p class="errorMsg">Your user name must have no spaces !</p>
+        </div>
+        <div class="form-group">
+          <label for="password">Password *</label>
+          <input type="password" id="password" placeholder="P@$$w0rD" />
+          <p class="errorMsg">Your password must be more than 6-characters</p>
+        </div>
+        <input class="button" type="submit" value="Sign Up" />
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
