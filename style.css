@@ -244,3 +244,10 @@ input.button:focus {
 	transform: translateX(20%);
 }
 
+.errorMsg {
+	font-size: 13px;
+	color: red;
+	margin: 0;
+	text-align: left;
+	display: none;
+}
