@@ -1,0 +1,47 @@
+FORMAT: 1A
+HOST: https://private-b2e6827-robustatask.apiary-mock.com
+
+# robusta-task
+
+This API allows users to sign in or sign up to our website.
+
+## Sign up [/auth/register]
+
+### Signing up a user [POST]
+
++ Request (application/json)
+
+        {
+            "name": "John Doe",
+            "email": "user@example.com",
+            "username": "JohnnyDoe",
+            "password": "P@$$w0rD"
+        }
+
+
++ Response 200 (application/json)
+
+        {
+            "success": true,
+            "message": "User signed up successfully"
+        }
+
+
+## Sign in [/auth/login]
+
+### Signing in a user [POST]
+
++ Request (application/json)
+
+        {
+            "email": "user@example.com",
+            "password": "P@$$w0rD"
+        }
+
+
++ Response 200 (application/json)
+
+        {
+            "success": true,
+            "message": "Login successful"
+        }
