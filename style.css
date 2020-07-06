@@ -251,3 +251,45 @@ input.button:focus {
 	text-align: left;
 	display: none;
 }
+
+@media (max-width: 1024px) {
+	body {
+		background: none;
+		height: 100%;
+	}
+	.container {
+		box-shadow: none;
+	}
+	h1 {
+		margin: 0px 0px 10px;
+	}
+	form {
+		width: 100%;
+	}
+	input.button {
+		width: 70%;
+		margin-top: 15px;
+	}
+	.sign-up-container {
+		width: 100%;
+		opacity: 1;
+	}
+	.sign-in-container {
+		width: 100%;
+	}
+	.overlay-container {
+		display: none;
+	}
+	.mobRegister, .mobLogIn {
+		margin: 0 auto;
+		display: block;
+		margin-top: 10px;
+		border: none;
+	}
+	.mobRegister {
+		background-color: #28B;
+	}
+	.mobLogIn {
+		background-color: rgb(42, 149, 112);
+	}
+}
