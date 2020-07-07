@@ -5,35 +5,42 @@ const API_PATH_SIGNIN = "/auth/login";
 // Implementation Of Checking Validation
 
 function checkValidity(formData) {
-    const fullName = formData.get('name');
+	const fullName = formData.get('name');
 	const email = formData.get('email');
 	const userName = formData.get('username');
 	const password = formData.get('password');
 
+    // Validate Full Name
 	if(!fullName) {
 		document.querySelector('.errorName').style.display = 'block';
 		document.getElementById('name').classList.add('error');
 	}
 
-	const emailPattern = /^([a-zA-Z0-9.]{1,64})+\@([a-zA-Z0-9.]{1,64})+$/
-	if(!email || !emailPattern.test(email)) {
+    // Validate Email
+	const emailPattern = /^([a-zA-Z0-9.]{1,64})+\@([a-zA-Z0-9.]{1,64})+$/;
+    
+    if(!email || !emailPattern.test(email)) {
 		document.querySelector('.errorEmail').style.display = 'block';
 		document.getElementById('email').classList.add('error');
 	}
 
-
-	if(!userName || userName.includes(" ")) {
+    // Validate User Name
+	const userNamePattern = /[^A-Za-z0-9]+/g;
+    
+    if(!userName || userNamePattern.test(userName)) {
 		document.querySelector('.errorUser').style.display = 'block';
 		document.getElementById('username').classList.add('error');
 	}
 
+    // Validate Password
 	if(!password || password.length < 8) {
 		document.querySelector('.errorPass').style.display = 'block';
 		document.getElementById('password').classList.add('error');
 	}
 
 	const allInvalidElems = document.getElementById('signUpForm').querySelectorAll('.error');
-	if (allInvalidElems.length) {
+    
+    if (allInvalidElems.length) {
 		allInvalidElems.forEach(elem => {
 			elem.addEventListener('input', function () {
 				this.classList.remove('error');
