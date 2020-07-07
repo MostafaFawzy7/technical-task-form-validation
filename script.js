@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch(`${API_URL}${API_PATH_SIGNIN}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: formData,
     })
       .then((res) => {
@@ -85,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch(`${API_URL}${API_PATH_SIGNUP}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: formData,
     })
       .then((res) => {

@@ -16,23 +16,23 @@
       <form id="signUpForm">
         <h1>Create Account</h1>
         <div class="form-group">
-          <label for="full_name">Full Name <em>*</em></label>
-          <input type="text" id="fullname" placeholder="John Doe" />
+          <label for="name">Full Name <em>*</em></label>
+          <input type="text" name="name" id="fullname" placeholder="John Doe" />
           <p class="errorMsg">You must fill this field !</p>
         </div>
         <div class="form-group">
           <label for="email">Email <em>*</em></label>
-          <input type="email" id="email" placeholder="user@example.com" />
+          <input type="email" name="email" id="email" placeholder="user@example.com" />
           <p class="errorMsg">Your email must be valid !</p>
         </div>
         <div class="form-group">
-          <label for="user_name">User Name <em>*</em></label>
-          <input type="text" id="username" placeholder="JohnnyDoe" />
+          <label for="username">User Name <em>*</em></label>
+          <input type="text" name="username" id="username" placeholder="JohnnyDoe" />
           <p class="errorMsg">Your user name must have no spaces !</p>
         </div>
         <div class="form-group">
           <label for="password">Password <em>*</em></label>
-          <input type="password" id="password" placeholder="P@$$w0rD" />
+          <input type="password" name="password" id="password" placeholder="P@$$w0rD" />
           <p class="errorMsg">Your password must be more than 6-characters</p>
         </div>
         <input class="signUpButton" type="submit" value="Sign Up" />
@@ -46,12 +46,12 @@
 				<h1>Sign in</h1>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" placeholder="Enter Your Email" />
+					<input type="email" name="email" placeholder="Enter Your Email" />
 					<p class="errorMsg">Your Email is incorrect !</p>
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>
-					<input type="password" placeholder="Enter Your Password" />
+					<input type="password" name="password" placeholder="Enter Your Password" />
 					<p class="errorMsg">Your password is incorrect !</p>
 				</div>
         <input class="signInButton" type="submit" value="Sign In" />
