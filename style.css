@@ -88,6 +88,10 @@ input::placeholder {
   color: #6d6d6d;
 }
 
+em {
+  font-size: 14px;
+  color: red;
+}
 
 
 /*************************** Class Selectors Style ***************************/
