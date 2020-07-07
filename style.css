@@ -107,7 +107,7 @@ div.form-group {
   margin: 10px;
 }
 
-input.button {
+input.signInButton, input.signUpButton {
   width: 50%;
   border-radius: 20px;
   border: 1px solid #ff4b2b;
@@ -123,11 +123,11 @@ input.button {
   cursor: pointer;
 }
 
-input.button:active {
+input.signInButton:active, input.signUpButton:active {
   transform: scale(0.95);
 }
 
-input.button:focus {
+input.signInButton:focus, input.signUpButton:focus {
   outline: none;
 }
 
