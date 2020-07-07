@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const signInForm = document.getElementById("signInForm");
   const logInVerify = document.getElementById("logInVerify");
+  const logInButton = document.querySelector(".signInButton");
 
   signInForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -52,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((res) => res.json())
       .then((data) => {
         logInVerify.innerText = data.message;
+        logInButton.style.cursor = "not-allowed";
+        logInButton.disabled = true;
       });
   });
 
@@ -59,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const signUpForm = document.getElementById("signUpForm");
   const signUpVerify = document.getElementById("signUpVerify");
+  const registerButton = document.querySelector(".signUpButton");
 
   signUpForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -73,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((res) => res.json())
       .then((data) => {
         signUpVerify.innerText = data.message;
+        registerButton.style.cursor = "not-allowed";
+        registerButton.disabled = true;
       });
   });
-  
 });
