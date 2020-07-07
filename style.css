@@ -280,6 +280,15 @@ input.signUpButton:focus {
   display: none;
 }
 
+.errEmail, .errPass {	
+	font-size: 12px;
+    font-weight: bold;
+    color: red;
+    margin: -10px 0;
+    text-align: left;
+    display: none;
+}
+
 input.error {
   border: 2px solid red !important;
 }
