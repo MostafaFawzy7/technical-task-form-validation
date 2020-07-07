@@ -50,7 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: { "Content-Type": "application/json" },
       body: formData,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        } else {
+          return res.json();
+        }
+      })
       .then((data) => {
         logInVerify.innerText = data.message;
         logInButton.style.cursor = "not-allowed";
@@ -75,7 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: { "Content-Type": "application/json" },
       body: formData,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        } else {
+          return res.json();
+        }
+      })
       .then((data) => {
         signUpVerify.innerText = data.message;
         registerButton.style.cursor = "not-allowed";
