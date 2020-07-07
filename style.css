@@ -283,6 +283,20 @@ input.button:focus {
 }
 
 
+/*********** Submission Confirmation Messages Style ***********/
+
+#logInVerify {
+	color: #56A00B;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+#signUpVerify {
+	color: #56A00B;
+	font-weight: 700;
+	font-size: 15px;
+}
+
 
 
 /******************************** Responsive Design ********************************/
