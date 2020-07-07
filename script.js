@@ -54,4 +54,26 @@ document.addEventListener("DOMContentLoaded", function () {
         logInVerify.innerText = data.message;
       });
   });
+
+  // Register Form Submission Request
+
+  const signUpForm = document.getElementById("signUpForm");
+  const signUpVerify = document.getElementById("signUpVerify");
+
+  signUpForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(signInForm);
+
+    fetch(`${API_URL}${API_PATH_SIGNUP}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        signUpVerify.innerText = data.message;
+      });
+  });
+  
 });
