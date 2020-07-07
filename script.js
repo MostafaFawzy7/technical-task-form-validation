@@ -3,7 +3,6 @@ const API_PATH_SIGNUP = "/auth/register";
 const API_PATH_SIGNIN = "/auth/login";
 
 document.addEventListener("DOMContentLoaded", function () {
-  
   // Register/Login Switching Functionality (Desktop)
 
   const signUpButton = document.getElementById("signUp");
@@ -33,5 +32,23 @@ document.addEventListener("DOMContentLoaded", function () {
   mobRegister.addEventListener("click", () => {
     signInContainer.style.display = "none";
     signUpContainer.style.display = "block";
+  });
+
+  // Login Form Submission Request
+
+  const signInForm = document.getElementById("signInForm");
+
+  signInForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(signInForm);
+
+    fetch(`${API_URL}${API_PATH_SIGNIN}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   });
 });
