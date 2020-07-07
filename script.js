@@ -39,9 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const signInForm = document.getElementById("signInForm");
   const logInVerify = document.getElementById("logInVerify");
   const logInButton = document.querySelector(".signInButton");
+  const logInSpinner = document.querySelector('.logInSpinner');
 
   signInForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    logInSpinner.style.display = 'block';
 
     const formData = new FormData(signInForm);
 
@@ -58,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .then((data) => {
+        logInSpinner.style.display = 'none';
         logInVerify.innerText = data.message;
         logInButton.style.cursor = "not-allowed";
         logInButton.disabled = true;
@@ -70,11 +74,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const signUpForm = document.getElementById("signUpForm");
   const signUpVerify = document.getElementById("signUpVerify");
   const registerButton = document.querySelector(".signUpButton");
+  const signUpSpinner = document.querySelector('.signUpSpinner');
 
   signUpForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const formData = new FormData(signInForm);
+    signUpSpinner.style.display = 'block';
+
+    const formData = new FormData(signUpForm);
 
     fetch(`${API_URL}${API_PATH_SIGNUP}`, {
       method: "POST",
@@ -89,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .then((data) => {
+        signUpSpinner.style.display = 'none';
         signUpVerify.innerText = data.message;
         registerButton.style.cursor = "not-allowed";
         registerButton.disabled = true;
