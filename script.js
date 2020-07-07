@@ -2,7 +2,7 @@ const API_URL = "https://private-b2e6827-robustatask.apiary-mock.com";
 const API_PATH_SIGNUP = "/auth/register";
 const API_PATH_SIGNIN = "/auth/login";
 
-// Implementation Of Checking Validation
+// Implementation Of Checking Register Form Validation
 
 function checkValidity(formData) {
 	const fullName = formData.get('name');
@@ -41,6 +41,39 @@ function checkValidity(formData) {
 	const allInvalidElems = document.getElementById('signUpForm').querySelectorAll('.error');
     
     if (allInvalidElems.length) {
+		allInvalidElems.forEach(elem => {
+			elem.addEventListener('input', function () {
+				this.classList.remove('error');
+				this.nextElementSibling.style.display = 'none';
+			})
+		});
+
+		return;
+	}
+
+	return true;
+}
+
+
+// Implementation Of Checking Login Form Validation
+
+function checkSignInValidity(formData) {
+	const logInEmail = formData.get('login');
+    const logInPass = formData.get('pass');;
+
+    const emailPattern = /^([a-zA-Z0-9.]{1,64})+\@([a-zA-Z0-9.]{1,64})+$/;
+	if(!logInEmail || !emailPattern.test(logInEmail)) {
+		document.querySelector('.errEmail').style.display = 'block';
+		document.getElementById('logInEmail').classList.add('error');
+	}
+
+	if(!logInPass || logInPass.length < 8) {
+		document.querySelector('.errPass').style.display = 'block';
+		document.getElementById('logInPass').classList.add('error');
+	}
+
+	const allInvalidElems = document.getElementById('signInForm').querySelectorAll('.error');
+	if (allInvalidElems.length) {
 		allInvalidElems.forEach(elem => {
 			elem.addEventListener('input', function () {
 				this.classList.remove('error');
@@ -96,9 +129,14 @@ document.addEventListener("DOMContentLoaded", function () {
   signInForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    logInSpinner.style.display = "block";
-
+    
     const formData = new FormData(signInForm);
+    
+    const isLoginValid = checkSignInValidity(formData);
+
+	if (!isLoginValid) return; 
+
+    logInSpinner.style.display = "block";
 
     fetch(`${API_URL}${API_PATH_SIGNIN}`, {
       method: "POST",
