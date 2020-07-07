@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         logInVerify.innerText = data.message;
         logInButton.style.cursor = "not-allowed";
         logInButton.disabled = true;
-      });
+      })
+      .catch((err) => console.error(err));
   });
 
   // Register Form Submission Request
@@ -79,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         signUpVerify.innerText = data.message;
         registerButton.style.cursor = "not-allowed";
         registerButton.disabled = true;
-      });
+      })
+      .catch((err) => console.error(err));
   });
 });
