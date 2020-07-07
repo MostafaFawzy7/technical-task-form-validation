@@ -5,46 +5,46 @@ const API_PATH_SIGNIN = "/auth/login";
 // Implementation Of Checking Validation
 
 function checkValidity(formData) {
-  const fullName = formData.get("name");
-  const email = formData.get("email");
-  const userName = formData.get("username");
-  const password = formData.get("password");
+    const fullName = formData.get('name');
+	const email = formData.get('email');
+	const userName = formData.get('username');
+	const password = formData.get('password');
 
-  if (!fullName) {
-    document.querySelector(".errorName").style.display = "block";
-    document.getElementById("name").classList.add("error");
-  }
+	if(!fullName) {
+		document.querySelector('.errorName').style.display = 'block';
+		document.getElementById('name').classList.add('error');
+	}
 
-  if (!email) {
-    document.querySelector(".errorEmail").style.display = "block";
-    document.getElementById("email").classList.add("error");
-  }
+	const emailPattern = /^([a-zA-Z0-9.]{1,64})+\@([a-zA-Z0-9.]{1,64})+$/
+	if(!email || !emailPattern.test(email)) {
+		document.querySelector('.errorEmail').style.display = 'block';
+		document.getElementById('email').classList.add('error');
+	}
 
-  if (!userName) {
-    document.querySelector(".errorUser").style.display = "block";
-    document.getElementById("username").classList.add("error");
-  }
 
-  if (!password) {
-    document.querySelector(".errorPass").style.display = "block";
-    document.getElementById("password").classList.add("error");
-  }
+	if(!userName || userName.includes(" ")) {
+		document.querySelector('.errorUser').style.display = 'block';
+		document.getElementById('username').classList.add('error');
+	}
 
-  const allInvalidElems = document
-    .getElementById("signUpForm")
-    .querySelectorAll(".error");
-  if (allInvalidElems.length) {
-    allInvalidElems.forEach((elem) => {
-      elem.addEventListener("input", function () {
-        this.classList.remove("error");
-        this.nextElementSibling.style.display = "none";
-      });
-    });
+	if(!password || password.length < 8) {
+		document.querySelector('.errorPass').style.display = 'block';
+		document.getElementById('password').classList.add('error');
+	}
 
-    return;
-  }
+	const allInvalidElems = document.getElementById('signUpForm').querySelectorAll('.error');
+	if (allInvalidElems.length) {
+		allInvalidElems.forEach(elem => {
+			elem.addEventListener('input', function () {
+				this.classList.remove('error');
+				this.nextElementSibling.style.display = 'none';
+			})
+		});
 
-  return true;
+		return;
+	}
+
+	return true;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
