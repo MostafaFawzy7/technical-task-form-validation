@@ -13,27 +13,27 @@
   <div class="container" id="container">
   
     <div class="form-container sign-up-container">
-      <form id="signUpForm">
+      <form id="signUpForm" novalidate>
         <h1>Create Account</h1>
         <div class="form-group">
-          <label for="name">Full Name <em>*</em></label>
-          <input type="text" name="name" id="fullname" placeholder="John Doe" />
-          <p class="errorMsg">You must fill this field !</p>
+          <label for="name">Full Name *</label>
+          <input type="text" name="name" id="name" placeholder="John Doe" />
+          <p class="errorName">You must fill this field !</p>
         </div>
         <div class="form-group">
-          <label for="email">Email <em>*</em></label>
+          <label for="email">Email *</label>
           <input type="email" name="email" id="email" placeholder="user@example.com" />
-          <p class="errorMsg">Your email must be valid !</p>
+          <p class="errorEmail">Your email must be valid !</p>
         </div>
         <div class="form-group">
-          <label for="username">User Name <em>*</em></label>
+          <label for="username">User Name *</label>
           <input type="text" name="username" id="username" placeholder="JohnnyDoe" />
-          <p class="errorMsg">Your user name must have no spaces !</p>
+          <p class="errorUser">Your user name must have no spaces !</p>
         </div>
         <div class="form-group">
-          <label for="password">Password <em>*</em></label>
+          <label for="password">Password *</label>
           <input type="password" name="password" id="password" placeholder="P@$$w0rD" />
-          <p class="errorMsg">Your password must be more than 6-characters</p>
+          <p class="errorPass">Your password must be more than 6-characters</p>
         </div>
         <input class="signUpButton" type="submit" value="Sign Up" />
         <span class="signUpSpinner"></span>
@@ -42,46 +42,46 @@
     </div>
   
     <div class="form-container sign-in-container">
-			<form id="signInForm">
-				<h1>Sign in</h1>
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" name="email" placeholder="Enter Your Email" />
-					<p class="errorMsg">Your Email is incorrect !</p>
-				</div>
-				<div class="form-group">
-					<label for="password">Password</label>
-					<input type="password" name="password" placeholder="Enter Your Password" />
-					<p class="errorMsg">Your password is incorrect !</p>
-				</div>
+      <form id="signInForm" novalidate>
+        <h1>Sign in</h1>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Enter Your Email" />
+          <p class="errorEmail">Your Email is incorrect !</p>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Enter Your Password" />
+          <p class="errorPass">Your password is incorrect !</p>
+        </div>
         <input class="signInButton" type="submit" value="Sign In" />
         <span class="logInSpinner"></span>
         <p id="logInVerify"></p>
-			</form>
+      </form>
     </div>
   
     <div class="overlay-container">
-			<div class="overlay">
-				<div class="overlay-panel overlay-left">
-					<h1>Welcome Back!</h1>
-					<p>To keep connected with us please login with your personal info</p>
-					<button class="switch" id="signIn">Login</button>
-				</div>
-				<div class="overlay-panel overlay-right">
-					<h1>Hello, Friend!</h1>
-					<p>Enter your personal details and start journey with us</p>
-					<button class="switch" id="signUp">Register</button>
-				</div>
-			</div>
-		</div>
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="switch" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="switch" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
   
   </div>
-  
+
   <div class="mobSwitch">
-		<button class="mobRegister">Register</button>
-		<button class="mobLogIn">Log in</button>
+    <button class="mobRegister">Register</button>
+    <button class="mobLogIn">Log in</button>
   </div>
-  
+
   <script src="script.js"></script>
 </body>
 
