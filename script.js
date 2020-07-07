@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Login Form Submission Request
 
   const signInForm = document.getElementById("signInForm");
+  const logInVerify = document.getElementById("logInVerify");
 
   signInForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -49,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        logInVerify.innerText = data.message;
+      });
   });
 });
