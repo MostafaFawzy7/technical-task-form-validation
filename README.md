@@ -12,11 +12,11 @@ This is meant to be a quick exercise, so please don't feel the need to spend mor
 
 You are not expected to perform all those tasks, and you are not limited to these only. You can do whatever you want that will improve the overall look and feel of the form.
 
-- Right now the page refreshes on submit, try to make the form submit the data using JavaScript (AJAX/XHR), maybe also add a loading indicator while the form submits in the background.
-- Give the form a makeover, you may take inspiration from any website you would like.
-- Validate the form before submitting (Client-Side Validation).
-- The form could be a little bit more accessible to screen readers.
-- Make the form allow both sign in and sign up, you can make it look like tabs and switch between them.
+- [✓] Right now the page refreshes on submit, try to make the form submit the data using JavaScript (AJAX/XHR), maybe also add a loading    indicator while the form submits in the background.
+- [✓] Give the form a makeover, you may take inspiration from any website you would like.
+- [✓] Validate the form before submitting (Client-Side Validation).
+- [✓] The form could be a little bit more accessible to screen readers.
+- [✓] Make the form allow both sign in and sign up, you can make it look like tabs and switch between them.
 
 ## Considerations
 
