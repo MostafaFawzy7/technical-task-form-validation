@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	formMobileSwitch();
 
+  // Submit Login Form
 
+	loginSubmit();
+
+	// Submit Register Form
+
+	registerSubmit();
   
 });
