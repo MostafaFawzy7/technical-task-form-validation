@@ -88,36 +88,15 @@ function checkSignInValidity(formData) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Register/Login Switching Functionality (Desktop)
+  
+  // Switch Between Registeration & Login Forms
 
-  const signUpButton = document.getElementById("signUp");
-  const signInButton = document.getElementById("signIn");
-  const container = document.getElementById("container");
+	formSwitch();
 
-  signUpButton.addEventListener("click", () => {
-    container.classList.add("right-panel-active");
-  });
+  // Switch Between Registeration & Login Forms in Responsive
 
-  signInButton.addEventListener("click", () => {
-    container.classList.remove("right-panel-active");
-  });
+	formMobileSwitch();
 
-  // Register/Login Switching Functionality (Mobile)
-
-  const mobLogIn = document.querySelector(".mobLogIn");
-  const mobRegister = document.querySelector(".mobRegister");
-  const signInContainer = document.querySelector(".sign-in-container");
-  const signUpContainer = document.querySelector(".sign-up-container");
-
-  mobLogIn.addEventListener("click", () => {
-    signUpContainer.style.display = "none";
-    signInContainer.style.display = "block";
-  });
-
-  mobRegister.addEventListener("click", () => {
-    signInContainer.style.display = "none";
-    signUpContainer.style.display = "block";
-  });
 
   // Login Form Submission Request
 
