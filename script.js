@@ -1,15 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   
-  // Switch Between Registeration & Login Forms
+  	// Switch Between Registeration & Login Forms
 
 	formSwitch();
 
-  // Switch Between Registeration & Login Forms in Responsive
+  	// Switch Between Registeration & Login Forms in Responsive
 
 	formMobileSwitch();
 
-  // Submit Login Form
+  	// Submit Login Form
 
 	loginSubmit();
 

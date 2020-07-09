@@ -282,11 +282,11 @@ input.signUpButton:focus {
 
 .errEmail, .errPass {	
 	font-size: 12px;
-    font-weight: bold;
-    color: red;
-    margin: -10px 0;
-    text-align: left;
-    display: none;
+  font-weight: bold;
+  color: red;
+  margin: -10px 0;
+  text-align: left;
+  display: none;
 }
 
 input.error {
