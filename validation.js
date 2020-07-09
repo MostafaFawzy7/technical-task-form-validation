@@ -2,7 +2,7 @@
 
 // Regex patterns
 
-const emailPattern = /^([a-zA-Z0-9.]{1,64})+\@([a-zA-Z0-9.]{1,64})+$/;
+const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 const userNamePattern = /[^A-Za-z0-9]+/g;
 
 // Validation Of Each Field
